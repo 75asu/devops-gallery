@@ -1,3 +1,3 @@
-# This folder contains little DevOps projects rotating around different tools
+# Collection of little DevOps projects rotating around different tools
 
-Static HTML web app deployed using Azure App Services
+1. [Static HTML web app deployed using Azure App Services](https://github.com/measutosh/devops-gallery/blob/main/mini%20projects/01-mini-do-project.md)
