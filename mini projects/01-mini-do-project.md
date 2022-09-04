@@ -4,11 +4,12 @@
 [Live Demo](http://expanding-cards.azurewebsites.net)<br>
 Here is the project which I have deployed using Azure App services - [Expanding Cards](https://github.com/measutosh/frontend-gallery/tree/main/expanding-cards)
 
-Steps followed :- 
-  - log into Azure CLI
-  - clone the repo to a directory
-  - enter into the repo and run the command `az webapp up --location westeurope --name <app_name> --html`
-  - the result should like this
+Steps followed :-
+
+- log into Azure CLI
+- clone the repo to a directory
+- enter into the repo and run the command `az webapp up --location westeurope --name <app_name> --html`
+- the result should like this
   ```
   asutosh [ ~/devopsprojects ]$ mkdir static-site-azure-app-services
   asutosh [ ~/devopsprojects ]$ cd static-site-azure-app-services/
