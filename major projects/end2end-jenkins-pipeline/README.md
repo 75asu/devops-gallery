@@ -53,4 +53,35 @@
 
 - Go to _manage jenkins -> manage nodes and clouds_ in jenkins instance to see the node attached to it by the cluster to jenkins. In
 _manage jenkins -> manage nodes and clouds -> configure clouds_, it will be visibble that kubernetes is already setup there.
-- Write a simple pipelineto check whether Jenkins is able to crete a pod as a build agent properly or not
+
+> Agent setup for Jenkinsfile
+
+- If no build agent is defined or only one agent is specified(e.g maven) then automatically Jenkins will try to create another container which is _JNLP container_(it is the main contiainer that is responsible to talk to the master pod). To create the container it will pickup the default image which is _jenkins inbound image_ from docker hub. But this is public repo and when a connection request will be sent from local internal setup to docker hub it will get rejected.
+- A solution for this will be keeping the image locally so that no request is needed to sent to docker hub, a pull for the image rom local will work just fine.
+- Add the template under _agent_ of the _Jenkinsfile_to make kubernetes as build agent(this will have 3 container : JNLP, git, maven) and define in which container your current stages should run(for this case it will be maven).
+
+    ```yaml
+    kubernetes {
+        yaml '''
+            apiVersion: v1
+            kind: Pod
+            metadata:
+            labels:
+                app: test
+            spec:
+            containers:
+            - name: maven
+                image: maven: 3.8.3-adoptopenjdk-11
+                command:
+                - cat
+                tty: true
+            - name: git
+                image: bitnami/git: latest
+                command:
+                - cat
+                tty: true
+        '''
+    }
+    ```
+
+- Go to _Dashboard -> spring-petclinic -> configure -> pipeline_,  paste the modified script, then buld the pipeline
