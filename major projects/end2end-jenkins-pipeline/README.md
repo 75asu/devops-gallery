@@ -51,5 +51,6 @@
     cat /run/secrets/additional/chart-admin-password && echo
     ```
 
-- Go to _manage jenkins -> manage nodes and clouds_ in jenkins instance to see the node attached to it by the cluster to jenkins. In 
+- Go to _manage jenkins -> manage nodes and clouds_ in jenkins instance to see the node attached to it by the cluster to jenkins. In
 _manage jenkins -> manage nodes and clouds -> configure clouds_, it will be visibble that kubernetes is already setup there.
+- Write a simple pipelineto check whether Jenkins is able to crete a pod as a build agent properly or not
