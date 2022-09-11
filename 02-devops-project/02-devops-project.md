@@ -2,7 +2,7 @@
 
 ## This is how it looks once setup is done completely
 
-![Video Demo](./02-devops-project-ss.webm)
+![Video Demo](./02-devops-project-ss.gif)
 
 ## Possible ways to configure Grafana & Prometheus in Kubernets Cluster
 
