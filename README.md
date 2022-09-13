@@ -6,5 +6,6 @@
 ### Quick access to all the projects
 
 
-1. [ A static HTML web app deployed in Azure App Service](./01-devops-project/01-devops-project.md)
-1. [ Prometheus & Grafana Monitoring On Kubernets using Helm](./02-devops-project/02-devops-project.md)
+1. [ A static HTML web app deployed in Azure App Service](./01-devops-project/README.md)
+1. [ Prometheus & Grafana Monitoring On Kubernets using Helm](./02-devops-project/README.md)
+1. [ Go WebApp with Dockerized Image and Deployed in Kubernetes](./03-devops-project/README.md)
