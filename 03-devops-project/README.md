@@ -1,4 +1,4 @@
-# Go WebApp with Dockerized Image and Deployd in Kubernetes(work in progress)
+# Go WebApp with Dockerized Image and Deployed in Kubernetes
 
 <!-- ## This is how it looks once setup is done completely
 
