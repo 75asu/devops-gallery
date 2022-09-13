@@ -1,19 +1,30 @@
 FROM golang:latest as builder
-# setup the working directory
+# Set the Current Working Directory inside the container
 WORKDIR /app
-# copy the mod and sum files to the working directory
+
+# Copy go mod and sum files
 COPY go.mod go.sum ./
-# download all the dependencies by running go mod
+
+# Download all dependencies. Dependencies will be cached if the go.mod and go.sum files are not changed
 RUN go mod download
-# copy rest of the source files to the working directory
+
+# Copy the source from the current directory to the Working Directory inside the container
 COPY . .
+
 # build it, name it as main and store in current working directory
 RUN go build -o main .
-# # expose it
-# EXPOSE 80
-# ENTRYPOINT [ "./main" ]
 
-FROM gcr.io/distroless/static-debian11
-COPY --from=builder /app/main .
 EXPOSE 80
-CMD ["/main"]
+ENTRYPOINT ["./main"]
+
+######## Start a new stage from scratch #######
+# FROM gcr.io/distroless/static-debian11
+# WORKDIR /root/
+
+# # Copy the Pre-built binary file from the previous stage
+# COPY --from=builder /app/main ./
+# # Expose port 8080 to the outside world
+# EXPOSE 80
+
+# # Command to run the executable
+# CMD [ "main" ]  
