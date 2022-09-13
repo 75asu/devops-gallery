@@ -1,0 +1,19 @@
+FROM golang:latest as builder
+# setup the working directory
+WORKDIR /app
+# copy the mod and sum files to the working directory
+COPY go.mod go.sum ./
+# download all the dependencies by running go mod
+RUN go mod download
+# copy rest of the source files to the working directory
+COPY . .
+# build it, name it as main and store in current working directory
+RUN go build -o main .
+# # expose it
+# EXPOSE 80
+# ENTRYPOINT [ "./main" ]
+
+FROM gcr.io/distroless/static-debian11
+COPY --from=builder /app/main .
+EXPOSE 80
+CMD ["/main"]
