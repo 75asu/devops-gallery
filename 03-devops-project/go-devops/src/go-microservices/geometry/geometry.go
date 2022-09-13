@@ -1,6 +1,8 @@
 package geometry
 
-import "math"
+import (
+	"math"
+)
 
 func Area(length, width float64) float64 {
 	return length * width

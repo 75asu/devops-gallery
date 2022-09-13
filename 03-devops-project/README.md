@@ -6,7 +6,7 @@
 
 
 > Steps to prepare the project :-
-
+# Small microsrevices built in Go(work in progress)
 
 ### Golang Setup
 
@@ -82,3 +82,6 @@
   $ echo $GOBIN
   C:\Users\measutosh\Documents\VSCode\DevOps Projects\devops-gallery\03-devops-project\go-devops\bin
   ```
+
+- Once the code is done then build the project. Create a _dockerignore_ file and then create the docker file to dockerize it.
+- Add content to the _dockerfile_ and meanwhile start the _minikube cluster_ too.
