@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: react-webapp
+  name: react-webapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: react-webapp
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: react-webapp
+    spec:
+      containers:
+        - name: webapp
+          image: measutosh/devops-test:v1.0
+          imagePullPolicy: Always
+      imagePullSecrets:
+        - name: regcred 
+status: {}
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: react-webapp
+  labels:
+    run: react-webapp
+spec:
+  ports:
+  - port: 3080
+    protocol: TCP
+  selector:
+    app: react-webapp
+  type: LoadBalancer
