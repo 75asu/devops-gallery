@@ -2,7 +2,7 @@
 
 ## This is how it looks once setup is done completely
 
-![Video Demo](./04-devops-project-ss.mp4)
+![Video Demo](./04-devops-project-ss.gif)
 <!-- <video src='./04-devops-project-ss.mp4' width=180/> -->
 <br>
 
