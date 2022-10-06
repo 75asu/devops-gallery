@@ -1,7 +1,7 @@
 # A static HTML web app deployed in Azure App Service
 
 
-[Live Demo](http://expanding-cards.azurewebsites.net)<br>
+
 Here is the project which I have deployed using Azure App services - [Expanding Cards](https://github.com/measutosh/frontend-gallery/tree/main/expanding-cards)
 
 Steps followed :-
