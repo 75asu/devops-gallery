@@ -1,0 +1,12 @@
+apiVersion: v1 
+kind: Service
+metadata:
+  name: my-flaskapp-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: my-flaskapp
+  ports:
+  - name: my-flaskapp
+    port: 80
+    targetPort: 5000
