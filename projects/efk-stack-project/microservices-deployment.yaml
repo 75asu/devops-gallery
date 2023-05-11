@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  springboot-microservices
+  namespace: efklog
+  labels:
+    app:  springboot-microservices
+spec:
+  selector:
+    matchLabels:
+      app: springboot-microservices
+      version: v1 
+      color: blue
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app:  springboot-microservices
+        version: v1 
+        color: blue
+    spec:
+      containers:
+      - name:  springboot-microservices
+        image:  ashokit/sb-logger-app
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 8080
+
+
