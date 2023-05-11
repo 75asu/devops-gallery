@@ -13,4 +13,4 @@
 1. [Deployment Setup Of A Full Stack App With MERN Stack On Minikube](./projects/multi-cont-deploy/README.md)
 1. [End To End CICD Pipeline Including Compiling, Testing, Quality Checking, OWSAP Scanning, Deploying To Docker And Tomcat Of A Springboot Project](./projects/java-e2e-deployment-project/)
 1. [Build And Deployment Setup Of A Collection Six Microservices Apps With Docker And Docker Compose](./projects/six-microservices-deployment-project/)
-1. [Setup ElasticSearch Fluentd Kibana Dashboard For A Springboot Microservices](./projects/efk-stack-project/README.md)
+1. [Setup ElasticSearch Fluentd Kibana Dashboard For A Springboot Microservices](./projects/efk-springboot-project/README.md)
